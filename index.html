@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gannon Tullock</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #faf7f2;
+      --warm-white: #fff9f4;
+      --ink: #1c1814;
+      --soft-ink: #4a3f35;
+      --muted: #9c8b7e;
+      --accent: #c96a3a;
+      --accent-light: #f0d4c0;
+      --border: #e8ddd4;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(250, 247, 242, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-name {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--soft-ink);
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 2rem 4rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .hero-inner {
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-name {
+      font-family: 'Lora', serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      line-height: 1.05;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--ink);
+    }
+
+    .hero-bio {
+      font-size: 1.15rem;
+      color: var(--soft-ink);
+      max-width: 560px;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-bio em {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.6rem;
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #b55a2d;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      border: 1.5px solid var(--border);
+      color: var(--soft-ink);
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── SECTION SHARED ── */
+    section {
+      padding: 6rem 2rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+
+    .section-title {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600;
+      margin-bottom: 2.5rem;
+      color: var(--ink);
+    }
+
+    hr.section-rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin-bottom: 3rem;
+    }
+
+    /* ── ABOUT / RESUME ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem 4rem;
+    }
+
+    .about-block h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      color: var(--ink);
+    }
+
+    .about-block p {
+      color: var(--soft-ink);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .resume-item {
+      border-left: 2px solid var(--accent-light);
+      padding-left: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .resume-item .role {
+      font-weight: 500;
+      font-size: 1rem;
+      color: var(--ink);
+    }
+
+    .resume-item .org {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .resume-item .dates {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+      letter-spacing: 0.04em;
+    }
+
+    .resume-item .desc {
+      margin-top: 0.5rem;
+      color: var(--soft-ink);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .skill-tag {
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.78rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── WRITING ── */
+    #writing {
+      background: var(--warm-white);
+      max-width: 100%;
+      padding: 6rem 2rem;
+    }
+
+    #writing .inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .article-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .article-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.8rem 2rem;
+      text-decoration: none;
+      display: block;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .article-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--accent);
+      transform: scaleY(0);
+      transition: transform 0.25s;
+      transform-origin: bottom;
+    }
+
+    .article-card:hover {
+      border-color: var(--accent-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201, 106, 58, 0.08);
+    }
+
+    .article-card:hover::before {
+      transform: scaleY(1);
+    }
+
+    .article-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .article-title {
+      font-family: 'Lora', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .article-excerpt {
+      font-size: 0.9rem;
+      color: var(--soft-ink);
+      line-height: 1.7;
+    }
+
+    .article-meta {
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      gap: 1rem;
+    }
+
+    .placeholder-note {
+      background: var(--accent-light);
+      border-radius: 6px;
+      padding: 1.2rem 1.6rem;
+      color: var(--soft-ink);
+      font-size: 0.9rem;
+      margin-top: 2rem;
+      font-style: italic;
+    }
+
+    /* ── CONTACT ── */
+    .contact-inner {
+      max-width: 520px;
+    }
+
+    .contact-inner p {
+      color: var(--soft-ink);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--soft-ink);
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .contact-link:hover {
+      color: var(--accent);
+    }
+
+    .contact-link .icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* ── ANIMATION ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 640px) {
+      .about-grid { grid-template-columns: 1fr; }
+      nav { padding: 0 1rem; }
+      .nav-links { gap: 1rem; }
+      #home { padding: 7rem 1.2rem 3rem; }
+      section { padding: 4rem 1.2rem; }
+      #writing { padding: 4rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-name" href="#home">Gannon Tullock</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div id="home">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Welcome</p>
+      <h1 class="hero-name">Gannon<br/>Tullock</h1>
+      <p class="hero-bio">
+        I write about <em>business & career</em> — the lessons, decisions, and ideas worth sharing. 
+        This is my small corner of the internet.
+      </p>
+      <div class="hero-cta">
+        <a href="#writing" class="btn btn-primary">Read My Writing</a>
+        <a href="#about" class="btn btn-secondary">About Me</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT / RESUME -->
+  <section id="about">
+    <p class="section-label">Background</p>
+    <h2 class="section-title">About Me</h2>
+    <hr class="section-rule" />
+
+    <div class="about-grid fade-in">
+      <div>
+        <div class="about-block" style="margin-bottom: 2.5rem;">
+          <h3>Who I Am</h3>
+          <p>
+            [Add a short personal bio here — a few sentences about who you are, 
+            what drives you, and what you care about. Keep it human and genuine.]
+          </p>
+        </div>
+
+        <div class="about-block">
+          <h3>What I Do</h3>
+          <p>
+            [Describe your current role or focus — your work, projects, or what 
+            you spend your time on day-to-day.]
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-family: Lora, serif; font-size: 1.05rem; margin-bottom: 1.2rem; color: var(--ink);">Experience</h3>
+
+        <div class="resume-item">
+          <div class="role">Job Title / Role</div>
+          <div class="org">Company or Organization</div>
+          <div class="dates">Year – Present</div>
+          <p class="desc">[Brief description of what you did and the impact you made.]</p>
+        </div>
+
+        <div class="resume-item">
+          <div class="role">Previous Role</div>
+          <div class="org">Previous Company</div>
+          <div class="dates">Year – Year</div>
+          <p class="desc">[Brief description of responsibilities and achievements.]</p>
+        </div>
+
+        <div class="resume-item">
+          <div class="role">Earlier Role</div>
+          <div class="org">Earlier Company</div>
+          <div class="dates">Year – Year</div>
+          <p class="desc">[Brief description.]</p>
+        </div>
+
+        <h3 style="font-family: Lora, serif; font-size: 1.05rem; margin-bottom: 0.8rem; margin-top: 2rem; color: var(--ink);">Areas of Interest</h3>
+        <div class="skills-list">
+          <span class="skill-tag">Strategy</span>
+          <span class="skill-tag">Leadership</span>
+          <span class="skill-tag">Entrepreneurship</span>
+          <span class="skill-tag">Career Growth</span>
+          <span class="skill-tag">Business Development</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <div id="writing">
+    <div class="inner">
+      <p class="section-label">Articles</p>
+      <h2 class="section-title">Writing</h2>
+      <hr class="section-rule" />
+
+      <div class="article-grid fade-in">
+
+        <a class="article-card" href="#">
+          <p class="article-tag">Business & Career</p>
+          <p class="article-title">The Question Every Professional Should Ask Themselves Each Year</p>
+          <p class="article-excerpt">A placeholder article. Replace this with your actual title and a short description of what the piece is about — just a sentence or two to draw readers in.</p>
+          <div class="article-meta">
+            <span>📅 Month Day, Year</span>
+            <span>· 4 min read</span>
+          </div>
+        </a>
+
+        <a class="article-card" href="#">
+          <p class="article-tag">Business & Career</p>
+          <p class="article-title">Another Article Title Goes Here</p>
+          <p class="article-excerpt">Another placeholder. You can update these cards with your real articles whenever you're ready — or ask Claude to help you add them.</p>
+          <div class="article-meta">
+            <span>📅 Month Day, Year</span>
+            <span>· 5 min read</span>
+          </div>
+        </a>
+
+        <a class="article-card" href="#">
+          <p class="article-tag">Business & Career</p>
+          <p class="article-title">A Third Article Title</p>
+          <p class="article-excerpt">One more placeholder card to show how your writing section will look as it grows. Delete this one if you only have two articles to start.</p>
+          <div class="article-meta">
+            <span>📅 Month Day, Year</span>
+            <span>· 3 min read</span>
+          </div>
+        </a>
+
+      </div>
+
+      <p class="placeholder-note">
+        ✏️ <strong>Note to Gannon:</strong> To add a real article, just share the title, date, and text with Claude — it'll update this file for you in seconds.
+      </p>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Contact</h2>
+    <hr class="section-rule" />
+    <div class="contact-inner fade-in">
+      <p>I'd love to hear from you — whether it's feedback on something I wrote, a conversation about business or careers, or just saying hello.</p>
+      <div class="contact-links">
+        <a href="mailto:your@email.com" class="contact-link">
+          <span class="icon">✉️</span>
+          your@email.com
+        </a>
+        <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank">
+          <span class="icon">💼</span>
+          LinkedIn
+        </a>
+        <a href="https://twitter.com/yourhandle" class="contact-link" target="_blank">
+          <span class="icon">𝕏</span>
+          Twitter / X
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Gannon Tullock · Built with care</p>
+  </footer>
+
+  <script>
+    // Scroll fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
