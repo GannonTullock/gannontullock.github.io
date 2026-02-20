@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How To Break Down and Negotiate Hourly Rates — Gannon Tullock</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #faf7f2;
+      --warm-white: #fff9f4;
+      --ink: #1c1814;
+      --soft-ink: #4a3f35;
+      --muted: #9c8b7e;
+      --accent: #c96a3a;
+      --accent-light: #f0d4c0;
+      --border: #e8ddd4;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(250, 247, 242, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-name {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-back {
+      text-decoration: none;
+      color: var(--soft-ink);
+      font-size: 0.88rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--accent); }
+
+    .article-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 8rem 2rem 6rem;
+    }
+
+    .article-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+      line-height: 1.4;
+    }
+
+    .article-byline {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .doc-rule {
+      border: none;
+      border-top: 1.5px solid #a0a0a0;
+      margin: 1.6rem 0;
+    }
+
+    .article-wrap p {
+      font-size: 1rem;
+      color: var(--soft-ink);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .article-wrap h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+      margin-top: 0.2rem;
+    }
+
+    .article-wrap ul {
+      margin: 0.2rem 0 1rem 1.4rem;
+      color: var(--soft-ink);
+    }
+
+    .article-wrap ul li {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 0.1rem;
+    }
+
+    .article-wrap ol {
+      margin: 0.2rem 0 1rem 1.4rem;
+      color: var(--soft-ink);
+    }
+
+    .article-wrap ol li {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 0.1rem;
+    }
+
+    .example-block {
+      margin-bottom: 1rem;
+      color: var(--soft-ink);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .article-footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .author-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .author-info .name {
+      font-weight: 500;
+      color: var(--ink);
+      font-size: 0.9rem;
+    }
+
+    .author-info .bio {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .back-link {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--soft-ink);
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--accent); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 640px) {
+      .article-wrap { padding-left: 1.2rem; padding-right: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-name" href="index.html">Gannon Tullock</a>
+    <a class="nav-back" href="index.html#writing">&#8592; Writing</a>
+  </nav>
+
+  <div class="article-wrap">
+
+    <h1 class="article-title">How To Break Down and Negotiate Hourly Rates</h1>
+    <p class="article-byline">Gannon Tullock &nbsp;|&nbsp; February 5, 2026</p>
+
+    <p>Despite new commercial models emerging, hourly rates are still how the majority of agency work is priced and charged today.</p>
+
+    <p>During my time in procurement I found they could be difficult to negotiate if I didn&#8217;t have an exact benchmark or apples to apple comparison. They show up in rate cards or SOWs as a single number, with very little explanation behind how that number was created.</p>
+
+    <p>From the agency side, though, hourly rates are not arbitrary. They are the result of a fairly standard formula that agencies use.</p>
+
+    <p>This article walks through the formula in plain terms, starting with the fundamentals, then explaining how the hourly rate is calculated, and ending with how best to negotiate them.</p>
+
+    <hr class="doc-rule" />
+
+    <h2>Step 1: Base salary</h2>
+
+    <p>The foundation of hourly rates is the base salary.</p>
+
+    <p>This is the annual compensation paid to the employee for their role. This usually does not include social costs/benefits and bonuses, but it is important to verify that with the agency as some use a &#8220;loaded salary&#8221; which includes the above.</p>
+
+    <div class="example-block">
+      Example:<br>
+      An Account Supervisor earns a base salary of $100,000 per year.
+    </div>
+
+    <p>At this stage, nothing has been converted to an hourly rate. We are still working in annual numbers.</p>
+
+    <hr class="doc-rule" />
+
+    <h2>Step 2: Overhead</h2>
+
+    <p>Salary alone is not the full cost of an employee to the agency. Overhead captures all the additional costs required to employ and support that person.</p>
+
+    <p>Common components of overhead include:</p>
+
+    <ul>
+      <li>Indirect Payroll</li>
+      <li>Health insurance and benefits</li>
+      <li>Retirement contributions</li>
+      <li>Paid time off</li>
+      <li>Training and professional development</li>
+      <li>Office space or remote work stipends</li>
+      <li>Software, tools, and licenses</li>
+      <li>Finance, HR, legal, and IT support</li>
+    </ul>
+
+    <p>Overhead is usually expressed as a percentage of base salary.</p>
+
+    <p>Typical ranges vary by agency type and geography but often fall somewhere between 80% and 120%.</p>
+
+    <div class="example-block">
+      Example:<br>
+      Base salary: $100,000<br>
+      Overhead at 110%: $110,000
+    </div>
+
+    <p>Total fully loaded cost so far: $210,000</p>
+
+    <hr class="doc-rule" />
+
+    <h2>Step 3: Profit</h2>
+
+    <p>After salary and overhead are accounted for, agencies add profit.</p>
+
+    <p>Profit is not a hidden fee. It is what allows a business to:</p>
+
+    <ul>
+      <li>Invest in growth</li>
+      <li>Absorb risk</li>
+      <li>Fund innovation and new offerings</li>
+      <li>Remain financially viable long term</li>
+    </ul>
+
+    <p>In many agency models, profit is calculated as a percentage of the total fully loaded cost (salary + overhead + profit).</p>
+
+    <p>This means profit is embedded in the total, rather than simply added on top.</p>
+
+    <div class="example-block">
+      Example:<br>
+      Total cost before profit: $210,000<br>
+      <br>
+      If profit represents 15% of total cost:<br>
+      Total cost including profit = $210,000 &#247; (1 &#8722; 0.15) = $247,059<br>
+      <br>
+      Profit amount:<br>
+      $247,059 &#8722; $210,000 = $37,059
+    </div>
+
+    <p>Total annual cost including profit: $247,059</p>
+
+    <hr class="doc-rule" />
+
+    <h2>Step 4: Hours per FTE</h2>
+
+    <p>Hours per FTE is the estimated number of hours that employee will work throughout the year.</p>
+
+    <p>The standard that agencies often push for is 1,800 hrs/FTE while reconciliation reports show that the real number of hours worked falls between 1,900 and 2,100 hrs/FTE based on agency type and market.</p>
+
+    <p>A 100-hour difference may not sound large, but it has a meaningful impact on the resulting hourly rate.</p>
+
+    <p>Example assumptions:</p>
+
+    <ul>
+      <li>Brand model: 1,900 hours</li>
+      <li>Agency model: 1,800 hours</li>
+    </ul>
+
+    <hr class="doc-rule" />
+
+    <h2>Step 5: Calculating the final hourly rate</h2>
+
+    <p>Putting it all together, it&#8217;s time to calculate the hourly rate</p>
+
+    <ol>
+      <li>Start with base salary</li>
+      <li>Add overhead</li>
+      <li>Add profit</li>
+      <li>Divide by hours per FTE</li>
+    </ol>
+
+    <p>Using the full example:</p>
+
+    <div class="example-block">
+      Base salary: $100,000<br>
+      Overhead: $110,000<br>
+      Profit: $37,059
+    </div>
+
+    <p>Total annual cost: $247,059</p>
+
+    <div class="example-block">
+      Using 1,900 hours (Brand):<br>
+      $247,059 &#247; 1,900 = $130 per hour (rounded)<br>
+      <br>
+      Using 1,800 hours (Agency):<br>
+      $247,059 &#247; 1,800 = $137 per hour (rounded)
+    </div>
+
+    <p>That is how the final hourly rate charged to a brand is typically calculated.</p>
+
+    <hr class="doc-rule" />
+
+    <h2>How To Negotiate Hourly Rates</h2>
+
+    <p>The benefit of understanding how hourly rates are built is that you can now ask for more transparency from your agency.</p>
+
+    <p>Instead of just receiving a rate card, ask to understand their overhead, profit margins, hours per FTE, and employee locations.</p>
+
+    <p>With this level of detail, you&#8217;re able to compare the components to internal and external benchmarks and have data-backed conversations with your agency.</p>
+
+    <p>The goal isn&#8217;t to drive every rate to the lowest possible number. The goal is to understand what you&#8217;re paying for and why.</p>
+
+    <p>Ensuring the correct number of hours from the right people are tied to the SOW is just as important, but I&#8217;ll save that for the next article.</p>
+
+    <div class="article-footer">
+      <div class="author-card">
+        <div class="author-avatar">GT</div>
+        <div class="author-info">
+          <div class="name">Gannon Tullock</div>
+          <div class="bio">Writing about business, career, and the things worth understanding.</div>
+        </div>
+      </div>
+      <a class="back-link" href="index.html#writing">&#8592; Back to all writing</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&#169; 2026 Gannon Tullock &middot; Built with care</p>
+  </footer>
+
+</body>
+</html>
